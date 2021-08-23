@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="container-fluid">
-            <a className="navbar-brand" href="#">Grant API</a>
+            <a className="navbar-brand" href="#">OAuth Flow</a>
             {/*
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
@@ -52,7 +52,7 @@ function App() {
           <br />
           <br />
           <p>
-            Grant API
+            OAuth Flow
           </p>
           <br />
           <br />
@@ -62,7 +62,7 @@ function App() {
             <div className="accordion-item">
               <h2 className="accordion-header" id="headingOne">
                 <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                  Create Connect URL (Grantor)
+                  Create Connect URL (ConectCar)
                 </button>
               </h2>
               <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -111,7 +111,7 @@ function App() {
             <div className="accordion-item">
               <h2 className="accordion-header" id="headingTwo">
                 <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Authorization (Recipient)
+                  Authorization (Ipiranga)
                 </button>
               </h2>
               <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
@@ -134,7 +134,7 @@ function App() {
             <div className="accordion-item">
               <h2 className="accordion-header" id="headingThree">
                 <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Get code from URL (Grantor)
+                  Get code from URL (ConectCar)
                 </button>
               </h2>
               <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
@@ -157,7 +157,7 @@ function App() {
             <div className="accordion-item">
               <h2 className="accordion-header" id="headingFour">
                 <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                  Get Access Token (Grantor)
+                  Get Access Token (ConectCar)
                 </button>
               </h2>
               <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
@@ -179,7 +179,7 @@ function App() {
             <div className="accordion-item">
               <h2 className="accordion-header" id="headingFive">
                 <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                  Transactions <span className="me-auto">(Grantor)</span>
+                  Transactions <span className="me-auto">(ConectCar)</span>
                 </button>
               </h2>
               <div id="collapseFive" className="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
@@ -192,6 +192,28 @@ function App() {
                     </svg>
                   </span>
                   <br />
+                  <br />
+                  <div className="row">
+                    <div className="col">
+                      <h6>Amount</h6>
+                      <input type="text" />
+                      <h6>OrderID</h6>
+                      <input type="text" />
+                      <br />
+                      <br />
+                      <button type="button" classNamee="btn btn-success">Payment</button>
+
+
+                      <br />
+
+
+                    </div>
+                    <div className="col">
+                      <textarea className="form-control" id="" cols="30" rows="10" placeholder='Waiting'></textarea>
+
+                    </div>
+
+                  </div>
 
                   <strong>This is the fourth item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
                 </div>
@@ -205,7 +227,7 @@ function App() {
           <br />
           <br />
 
-          <a
+          {/* <a
             className="App-link"
             href="https://developer.paypal.com/braintree/docs/guides/extend/grant-api/overview"
             target="_blank"
@@ -213,7 +235,7 @@ function App() {
           >
             Reference
           </a>
-
+ */}
 
         </div>
       </header>
