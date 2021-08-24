@@ -310,7 +310,6 @@ function Main() {
                   </div>
                   <div className="col">
                     <textarea className="form-control" id="" cols="30" rows="10" placeholder='Waiting'></textarea>
-
                   </div>
 
                 </div>
