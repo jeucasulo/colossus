@@ -304,7 +304,6 @@ function Main() {
                     <br />
                     <button type="button" className="btn btn-success" onClick={payment}>Payment</button>
 
-
                     <br />
 
 
