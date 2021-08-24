@@ -10,6 +10,9 @@ function Main() {
   const [connectUrlRes, setConnectUrlRes] = React.useState([""]);
   const [getCodeRes, setGetCodeRes] = React.useState([""]);
   const [getAccessTokenFinalRes, setGetAccessTokenFinalRes] = React.useState([""]);
+  const [amount, setAmount] = React.useState([""]);
+  const [orderId, setOrderId] = React.useState([""]);
+  const [sharedPaymentMethodToken, setSharedPaymentMethodToken] = React.useState([""]);
 
 
   const [authorizationStatus, setAuthorizationStatus] = React.useState(false);
@@ -35,14 +38,53 @@ function Main() {
     console.log(urlToGetAccessTokenFinal);
     const accessTokenFinal = await axios.get(urlToGetAccessTokenFinal);
     console.log(accessTokenFinal);
-    setGetAccessTokenFinalRes(accessTokenFinal.data.msg.accessTokenData);
+    setGetAccessTokenFinalRes(JSON.stringify(accessTokenFinal.data.msg, "", 2));
     // setAuthorizationStatus(true);
   }
 
 
   const payment = async () => {
+    // let useAccessTokenForMerchant = getAccessTokenFinalRes.credentials.accessToken;
+    let useAccessTokenForMerchant = getAccessTokenFinalRes.msg.credentials.accessToken;
+    console.log(sharedPaymentMethodToken);
+    let transaction = "https://colossus-backend.herokuapp.com/transaction?amount=" + amount + "&orderId=" + orderId + "&useAccessTokenForMerchant=" + useAccessTokenForMerchant;
+    console.log(transaction);
+    // const transactionRes = await axios.get(transaction);
+    console.log(amount);
     console.log('payment');
+    console.log(getAccessTokenFinalRes);
+
+    // {
+    //   credentials: OAuthCredentials {
+    //     accessToken: 'access_token$sandbox$kq7t3257dqmnpjrz$f2e0707e0990530f035191546b37ec3e',
+    //       refreshToken: 'refresh_token$sandbox$kq7t3257dqmnpjrz$267dc42afb4fda2f5af3d96d13658b8d',
+    //         tokenType: 'bearer',
+    //           expiresAt: '2021-08-23T01:47:23Z',
+    //             scope: 'shared_vault_transactions'
+    //   },
+    //   success: true
+    // }
+
+
+
   }
+
+
+  function handleAmountChange(e) {
+    // console.log(e.target.value);
+    setAmount(e.target.value);
+    console.log('novo valor do amount');
+    console.log(amount);
+  }
+
+  function handleOrderIdChange(e) {
+    // console.log(e.target.value);
+    setOrderId(e.target.value);
+    console.log('novo valor do orderId');
+    console.log(orderId);
+  }
+
+
 
 
   return (
@@ -297,9 +339,9 @@ function Main() {
                 <div className="row">
                   <div className="col">
                     <h6>Amount</h6>
-                    <input type="number" />
+                    <input type="number" onChange={handleAmountChange} />
                     <h6>OrderID</h6>
-                    <input type="text" />
+                    <input type="text" onChange={handleOrderIdChange} />
                     <br />
                     <br />
                     <button type="button" className="btn btn-success" onClick={payment}>Payment</button>
